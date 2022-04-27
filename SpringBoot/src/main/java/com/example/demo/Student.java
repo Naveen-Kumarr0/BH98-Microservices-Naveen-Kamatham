@@ -34,13 +34,13 @@ public class Student {
 	String grades() {
 
 		if (marks >= 90 && marks <= 100) {
-			return name + "You Scored Grade-A";
+			return name + " You Scored Grade-A";
 		} else if (marks >= 80 && marks <= 90) {
-			return name + "You Scored Grade-B";
+			return name + " You Scored Grade-B";
 		} else if (marks >= 70 && marks <= 80) {
-			return name + "You Scored Grade-C";
+			return name + " You Scored Grade-C";
 		} else {
-			return name + "You are Fail";
+			return name + " You are Fail";
 		}
 
 	}
