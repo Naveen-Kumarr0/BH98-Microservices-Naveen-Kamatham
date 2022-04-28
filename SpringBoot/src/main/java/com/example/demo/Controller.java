@@ -25,7 +25,7 @@ public class Controller {
 	@RequestMapping("/grades/{name}/{marks}")
 	public String grade(@PathVariable String name, @PathVariable int marks) {
 
-		Student std = new Student(name,marks);
+		Student1 std = new Student1(name,marks);
 		return std.grades();
 
 	}

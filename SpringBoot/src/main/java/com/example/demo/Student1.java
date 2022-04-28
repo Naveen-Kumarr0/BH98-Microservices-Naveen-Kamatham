@@ -1,15 +1,15 @@
 package com.example.demo;
 
-public class Student {
+public class Student1 {
 
 	private String name;
 	private int marks;
 
-	public Student() {
+	public Student1() {
 		super();
 	}
 
-	public Student(String name, int marks) {
+	public Student1(String name, int marks) {
 		super();
 		this.name = name;
 		this.marks = marks;
