@@ -11,27 +11,28 @@ import javax.persistence.Table;
 @Table(name = "students")
 public class Student {
 
-	private @Id @GeneratedValue Long rollno;
+	private @Id @GeneratedValue Long id;
 	private String name;
 	private Long marks;
+	private String grade;
 
 	Student() {
 	}
 
-	public Student(Long rollno, String name, Long marks) {
+	public Student(Long id, String name, Long marks, String grade) {
 		super();
-		this.rollno = rollno;
+		this.id = id;
 		this.name = name;
-
+		this.grade = grade;
 		this.marks = marks;
 	}
 
-	public Long getRollno() {
-		return rollno;
+	public Long getId() {
+		return id;
 	}
 
-	public void setRollno(Long rollno) {
-		this.rollno = rollno;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -50,14 +51,22 @@ public class Student {
 		this.marks = marks;
 	}
 
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [rollno=" + rollno + ", name=" + name + ", marks=" + marks + "]";
+		return "Student [rollno=" + id + ", name=" + name + ", marks=" + marks + ", grade=" + grade + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(marks, name, rollno);
+		return Objects.hash(grade, marks, name, id);
 	}
 
 	@Override
@@ -69,8 +78,8 @@ public class Student {
 		if (getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
-		return Objects.equals(marks, other.marks) && Objects.equals(name, other.name)
-				&& Objects.equals(rollno, other.rollno);
+		return Objects.equals(grade, other.grade) && Objects.equals(marks, other.marks)
+				&& Objects.equals(name, other.name) && Objects.equals(id, other.id);
 	}
 
 }
