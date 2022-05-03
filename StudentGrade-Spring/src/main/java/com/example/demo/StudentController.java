@@ -1,13 +1,13 @@
 package com.example.demo;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,5 +46,17 @@ public class StudentController {
 	void deleteStudentById(@PathVariable Long id) {
 		studentService.deleteStudent(id);
 	}
+	@PutMapping("/student/{id}")
+	Student updateStudent(@PathVariable Long id,@RequestBody Student s) {
+		return studentRepo.findById(id).map(stu ->{
+			stu.setName(s.getName());
+			stu.setMarks(s.getMarks());
+			return studentRepo.save(stu);
+		}).orElseGet(() ->{
+			s.setId(id);
+			return studentRepo.save(s);
+		});
+	}
+	
 
 }

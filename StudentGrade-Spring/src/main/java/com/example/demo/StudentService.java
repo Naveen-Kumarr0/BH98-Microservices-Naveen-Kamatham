@@ -8,7 +8,7 @@ public class StudentService {
 	@Autowired
 	StudentRepo studentRepo;
 
-	String getGrade(Student student) {
+	public String getGrade(Student student) {
 
 		if (student.getMarks() > 100)
 			return "Invalid Marks";
