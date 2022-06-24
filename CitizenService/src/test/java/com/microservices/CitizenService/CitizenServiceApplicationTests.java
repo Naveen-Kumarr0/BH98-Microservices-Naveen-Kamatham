@@ -1,10 +1,10 @@
-package com.microservices.EurekaServer;
+package com.microservices.CitizenService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServerApplicationTests {
+class CitizenServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
